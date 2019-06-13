@@ -8,7 +8,14 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DescendingOrderTest {
 
+    /**
+     * Input array
+     */
     private final int[] inputArray = {21445, 145263, 125485723};
+
+    /**
+     * Output array
+     */
     private final int[] outputArray = {54421, 654321, 875543221};
 
     /**

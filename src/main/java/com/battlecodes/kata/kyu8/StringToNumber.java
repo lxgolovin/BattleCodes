@@ -1,6 +1,5 @@
 package com.battlecodes.kata.kyu8;
 
-
 /**
  * Note: This kata is inspired by Convert a Number to a String!. Try that one too.
  *
@@ -16,18 +15,21 @@ package com.battlecodes.kata.kyu8;
  * stringToNumber("-7"  ) == -7
  */
 public class StringToNumber {
-    public StringToNumber() {
-        System.out.println("Start with " + this.getClass());
-        System.out.println(stringToNumber("1234"));
-        System.out.println(stringToNumberOther("1234"));
 
-        System.out.println("FINISHED with " + this.getClass());
-    }
-
+    /**
+     * Converts string to integer by parseInt
+     * @param str string to be converted
+     * @return integer value parsed from string
+     */
     public static int stringToNumber(String str) {
         return Integer.parseInt(str);
     }
 
+    /**
+     * Converts string to integer by valueOf
+     * @param str string to be converted
+     * @return integer value parsed from string
+     */
     public static int stringToNumberOther(String str) {
         return Integer.valueOf(str);
     }

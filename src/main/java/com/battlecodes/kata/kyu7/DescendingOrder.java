@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 import static com.battlecodes.kata.kyu8.StringToNumber.stringToNumber;
+import static com.battlecodes.kata.kyu8.StringToNumber.stringToNumberOther;
 import static java.util.stream.Collectors.joining;
 
 /**
@@ -16,14 +17,14 @@ import static java.util.stream.Collectors.joining;
  * Input: 145263 Output: 654321
  * Input: 1254859723 Output: 9875543221
  */
-public class DescendingOrder {
+class DescendingOrder {
 
     /**
      * Array based implementation
      * @param num integer number to be converted
      * @return rearranged num with its digits in descending order (the highest possible number)
      */
-    public static int sortDescArray(int num) {
+    static int sortDescArray(int num) {
         String numStr = ""+num;
 
         String[] splited = numStr.split("");
@@ -38,10 +39,10 @@ public class DescendingOrder {
      * @param num integer number to be converted
      * @return rearranged num with its digits in descending order (the highest possible number)
      */
-    public static int sortDescStream(int num) {
+    static int sortDescStream(int num) {
         String numStr = ""+num;
 
-        return stringToNumber(
+        return stringToNumberOther(
                 Arrays.stream(numStr.split(""))
                         .sorted(Comparator.reverseOrder())
                         .collect(joining()));
