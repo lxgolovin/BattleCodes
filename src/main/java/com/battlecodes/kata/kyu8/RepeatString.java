@@ -1,16 +1,20 @@
-package ru.codewars.kata.kyu8;
+package com.battlecodes.kata.kyu8;
 
-public class RepeatString {
-    public RepeatString() {
-        System.out.println("Start with " + this.getClass());
-        System.out.println(repeatStr(6, "I"));
-        System.out.println(repeatStrSuper(6, "I"));
-        System.out.println(repeatStrClever(6, "I"));
-        System.out.println("FINISHED with " + this.getClass());
-    }
+/**
+ * Write a function called repeatStr which repeats the given string string exactly n times.
+ *
+ * repeatStr(6, "I") // "IIIIII"
+ * repeatStr(5, "Hello") // "HelloHelloHelloHelloHello"
+ */
+class RepeatString {
 
-
-    public static String repeatStr(final int repeat, final String string) {
+    /**
+     * Repeats string value several times
+     * @param repeat number of times to repeat
+     * @param string to repeat
+     * @return repeated string
+     */
+    static String repeatStr(int repeat, String string) {
         String res = "";
 
         for (int i = 0; i < repeat; i++) {
@@ -19,7 +23,13 @@ public class RepeatString {
         return res;
     }
 
-    public static String repeatStrSuper(final int repeat, final String string) {
+    /**
+     * Repeats string value several times, builder solution
+     * @param repeat number of times to repeat
+     * @param string to repeat
+     * @return repeated string
+     */
+    static String repeatStrBuilder(int repeat, String string) {
         StringBuilder sb = new StringBuilder();
 
         for (int i = 0; i < repeat; i++) {
@@ -29,8 +39,14 @@ public class RepeatString {
         return sb.toString();
     }
 
-    public static String repeatStrClever(final int repeat, final String string) {
+    /**
+     * Repeats string value several times, stream solution
+     * @param repeat number of times to repeat
+     * @param string to repeat
+     * @return repeated string
+     */
+    static String repeatStrStream(int repeat, String string) {
         return java.util.stream.IntStream.range(0, repeat).mapToObj(i -> string)
-                .collect(java.util.stream.Collectors.joining()).toString();
+                .collect(java.util.stream.Collectors.joining());
     }
 }

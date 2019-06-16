@@ -12,7 +12,7 @@ package com.battlecodes.kata.kyu8;
 class IntegerToString {
 
     /**
-     * Old schoot name (slow one)
+     * Old school name (slow one)
      * @param i integer to be converted
      * @return string converted from integer i
      */
@@ -21,7 +21,7 @@ class IntegerToString {
     }
 
     /**
-     * Old schoot name (slow one)
+     * Better type to convert
      * @param i integer to be converted
      * @return string converted from integer i
      */
@@ -30,7 +30,7 @@ class IntegerToString {
     }
 
     /**
-     * Old schoot name (slow one)
+     * One more type to convert string to int
      * @param i integer to be converted
      * @return string converted from integer i
      */

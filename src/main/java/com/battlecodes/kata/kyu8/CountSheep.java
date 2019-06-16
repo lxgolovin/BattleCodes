@@ -1,4 +1,4 @@
-package ru.codewars.kata.kyu8;
+package com.battlecodes.kata.kyu8;
 
 
 import java.util.Arrays;
@@ -20,49 +20,44 @@ import java.util.Objects;
  *
  * Hint: Don't forget to check for bad values like null/undefined
  */
+class CountSheep {
 
-public class CountSheep {
-    public CountSheep() {
-
-        Boolean[] sheep = {true,  true,  true,  false,
-                true,  true,  true,  true ,
-                true,  false, true,  false,
-                true,  false, false, true ,
-                true,  true,  true,  true ,
-                false, false, true,  true};
-        System.out.println("Start with " + this.getClass());
-        System.out.println(countSheep(sheep));
-        System.out.println(countSheepSuper(sheep));
-        System.out.println(countSheepSuperPuper(sheep));
-
-        System.out.println("FINISHED with " + this.getClass());
-    }
-
-//    private static int countSheep2(Boolean[] sheep) {
-//        Arrays.stream(sheep).
-//    }
-
-    private static int countSheep(Boolean[] sheep) {
+    /**
+     * Classic implementation
+     * @param sheep array of sheep
+     * @return counted sheep
+     */
+    static int countSheep(Boolean[] sheep) {
         int count = 0;
-        for (int i=0; i < sheep.length; i++ ) {
+        for (Boolean s: sheep) {
             try {
-                if (sheep[i]) count++;
+                if (s) count++;
             }
             catch (java.lang.NullPointerException e) {
-                continue;
+                // do nothing
             }
         }
         return count;
     }
 
 
-    private static int countSheepSuper(Boolean[] arrayOfSheeps) {
-        return (int) Arrays.stream(arrayOfSheeps)
+    /**
+     * Stream implementation of {@link CountSheep#countSheep(Boolean[])}
+     * @param sheep array of sheep
+     * @return counted sheep
+     */
+    static int countSheepStream(Boolean[] sheep) {
+        return (int) Arrays.stream(sheep)
                 .filter(Objects::nonNull)
                 .filter(Boolean::booleanValue).count();
     }
 
-    public static int countSheepSuperPuper(Boolean[] arrayOfSheeps) {
-        return (int) Arrays.stream(arrayOfSheeps).filter(b -> Boolean.TRUE.equals(b)).count();
+    /**
+     * Stream implementation of {@link CountSheep#countSheep(Boolean[])}
+     * @param sheep array of sheep
+     * @return counted sheep
+     */
+    static int countSheepStreamVer2(Boolean[] sheep) {
+        return (int) Arrays.stream(sheep).filter(Boolean.TRUE::equals).count();
     }
 }

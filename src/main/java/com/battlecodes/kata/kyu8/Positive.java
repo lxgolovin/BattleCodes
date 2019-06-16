@@ -1,4 +1,6 @@
-package ru.codewars.kata.kyu8;
+package com.battlecodes.kata.kyu8;
+
+import java.util.Arrays;
 
 /**
  * Description:
@@ -6,33 +8,23 @@ package ru.codewars.kata.kyu8;
  * Example [1,-4,7,12] => 1 + 7 + 12 = 20
  * Note: if there is nothing to sum, the sum is default to 0
  */
+class Positive {
 
-import java.util.Arrays;
-
-public class Positive {
-    public Positive(Boolean printIt) {
-        int[] justArray;
-
-        System.out.println("Start with " + this.getClass());
-
-        justArray = randomArray();
-        if (printIt) {
-            for (int i: justArray ) {
-                System.out.println(i);
-           }
-        }
-
-        System.out.println(sum(justArray));
-        System.out.println(sumSuper(justArray));
-
-        System.out.println("FINISH with " + this.getClass());
-    }
-
-    public static int sumSuper(int[] arr){
+    /**
+     * Sums all positives in the array in stream
+     * @param arr array of values
+     * @return the sum
+     */
+    static int sumPositivesStream(int[] arr){
         return Arrays.stream(arr).filter(v -> v > 0).sum();
     }
 
-    public static int sum(int[] arr) {
+    /**
+     * Sums all positives in the array
+     * @param arr array of values
+     * @return the sum
+     */
+    static int sumPositives(int[] arr) {
         int res = 0;
 
         if (arr.length <= 0 ) {
@@ -48,11 +40,21 @@ public class Positive {
         return res;
     }
 
+    /**
+     * Creates a random value in limits
+     * @param min minimum for the value
+     * @param max maximum for the value
+     * @return random value
+     */
     private static int random(int min, int max) {
         return min+(int)(Math.random()*(max-min));
     }
 
-    private static int[] randomArray () {
+    /**
+     * Random array with random size (10..5000) with values -100..100
+     * @return random array
+     */
+    static int[] randomArray () {
         int randomSize = random(10, 5000);
         int[] arr = new int[randomSize];
 

@@ -1,5 +1,9 @@
 package com.battlecodes.kata.kyu8;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * Jenny has written a function that returns a greeting for a user.
  * However, she's in love with Johnny, and would like to greet him slightly different.
@@ -7,14 +11,14 @@ package com.battlecodes.kata.kyu8;
  *
  * Can you help her?
  */
-class JennySecretName {
+class JennySecretNameTest {
 
     /**
-     * Say hello. Easy kyu
-     * @param name Name
-     * @return Greeting
+     * Say hello
      */
-    static String greet(String name) {
-        return name.equals("Johnny") ?  "Hello, my love!": String.format("Hello, %s!", name);
+    @Test
+    void greet() {
+        assertEquals("Hello, my love!", JennySecretName.greet("Johnny"));
+        assertEquals("Hello, Mike!", JennySecretName.greet("Mike"));
     }
 }
