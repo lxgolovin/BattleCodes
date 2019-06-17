@@ -25,7 +25,7 @@ package com.battlecodes.kata.kyu7;
 class ReverseString {
 
     /**
-     * Recursive reserse method to revert string
+     * Recursive reverse method to revert string
      * @param str to be reverted
      * @return string reverted
      */
