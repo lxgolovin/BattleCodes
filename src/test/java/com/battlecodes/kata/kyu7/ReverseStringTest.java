@@ -1,5 +1,9 @@
 package com.battlecodes.kata.kyu7;
 
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 /**
  * ##Do you know how to write a recursive function? Let's test it!
  * * Definition: Recursive function is a function that calls itself during its execution *
@@ -22,17 +26,15 @@ package com.battlecodes.kata.kyu7;
  * reverse("12345") = "54321" (N = 5)
  * All tests for this Kata are randomly generated, besides checking the reverse logic they will count how many times the reverse() function has been executed.
  */
-class ReverseString {
+class ReverseStringTest {
 
     /**
-     * Recursive reserse method to revert string
-     * @param str to be reverted
-     * @return string reverted
+     * Tests to check if it works
      */
-    static String reverse(String str) {
-        if (str.length() > 1 ) {
-            str = reverse(str.substring(1)).concat(str.substring(0,1));
-        }
-        return str;
+    @Test
+    void reverse() {
+        assertEquals("dlrow olleh", ReverseString.reverse("hello world"));
+        assertEquals("abcd", ReverseString.reverse("dcba"));
+        assertEquals("12345", ReverseString.reverse("54321"));
     }
 }
