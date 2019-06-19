@@ -21,5 +21,10 @@ class SimplePigLatinTest {
         assertEquals("hisTay siay ymay tringsay", SimplePigLatin.pigIt("This is my string"));
         assertEquals("igPay atinlay siay oolcay", SimplePigLatin.pigIt("Pig latin is cool"));
         assertEquals("elloHay orldway !", SimplePigLatin.pigIt("Hello world !"));
+
+        assertEquals("igPay atinlay siay oolcay", SimplePigLatin.pigItCrazy("Pig latin is cool"));
+        assertEquals("hisTay siay ymay tringsay", SimplePigLatin.pigItCrazy("This is my string"));
+        assertEquals("igPay atinlay siay oolcay", SimplePigLatin.pigItCrazy("Pig latin is cool"));
+        assertEquals("elloHay orldway !", SimplePigLatin.pigItCrazy("Hello world !"));
     }
 }
