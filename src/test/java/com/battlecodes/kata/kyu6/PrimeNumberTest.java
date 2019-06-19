@@ -28,39 +28,83 @@ class PrimeNumberTest {
      * Tests basics for the prime number
      */
     @Test
-    public void testBasic() {
-        assertFalse(PrimeNumber.isPrime(0), "0  is not prime");
-        assertFalse(PrimeNumber.isPrime(1), "1  is not prime");
-        assertTrue (PrimeNumber.isPrime(2), "2  is prime");
-        assertTrue (PrimeNumber.isPrime(73), "73 is prime");
-        assertFalse(PrimeNumber.isPrime(75), "75 is not prime");
-        assertFalse(PrimeNumber.isPrime(-1), "-1 is not prime");
+    void testBasic() {
+        assertFalse(PrimeNumber.isPrimeClassic(0), "0  is not prime");
+        assertFalse(PrimeNumber.isPrimeClassic(1), "1  is not prime");
+        assertTrue (PrimeNumber.isPrimeClassic(2), "2  is prime");
+        assertTrue (PrimeNumber.isPrimeClassic(73), "73 is prime");
+        assertFalse(PrimeNumber.isPrimeClassic(75), "75 is not prime");
+        assertFalse(PrimeNumber.isPrimeClassic(-1), "-1 is not prime");
+
+        assertFalse(PrimeNumber.isPrimeStream(0), "0  is not prime");
+        assertFalse(PrimeNumber.isPrimeStream(1), "1  is not prime");
+        assertTrue (PrimeNumber.isPrimeStream(2), "2  is prime");
+        assertTrue (PrimeNumber.isPrimeStream(73), "73 is prime");
+        assertFalse(PrimeNumber.isPrimeStream(75), "75 is not prime");
+        assertFalse(PrimeNumber.isPrimeStream(-1), "-1 is not prime");
+
+        assertFalse(PrimeNumber.isPrimeBig(0), "0  is not prime");
+        assertFalse(PrimeNumber.isPrimeBig(1), "1  is not prime");
+        assertTrue (PrimeNumber.isPrimeBig(2), "2  is prime");
+        assertTrue (PrimeNumber.isPrimeBig(73), "73 is prime");
+        assertFalse(PrimeNumber.isPrimeBig(75), "75 is not prime");
+        assertFalse(PrimeNumber.isPrimeBig(-1), "-1 is not prime");
     }
 
     /**
      * All the numbers are prime. Check this out
      */
     @Test
-    public void testPrime() {
-        assertTrue(PrimeNumber.isPrime(3), "3 is prime");
-        assertTrue(PrimeNumber.isPrime(5), "5 is prime");
-        assertTrue(PrimeNumber.isPrime(7), "7 is prime");
-        assertTrue(PrimeNumber.isPrime(41), "41 is prime");
-        assertTrue(PrimeNumber.isPrime(5099), "5099 is prime");
+    void testPrime() {
+        assertTrue(PrimeNumber.isPrimeClassic(3), "3 is prime");
+        assertTrue(PrimeNumber.isPrimeClassic(5), "5 is prime");
+        assertTrue(PrimeNumber.isPrimeClassic(7), "7 is prime");
+        assertTrue(PrimeNumber.isPrimeClassic(41), "41 is prime");
+        assertTrue(PrimeNumber.isPrimeClassic(5099), "5099 is prime");
+
+        assertTrue(PrimeNumber.isPrimeStream(3), "3 is prime");
+        assertTrue(PrimeNumber.isPrimeStream(5), "5 is prime");
+        assertTrue(PrimeNumber.isPrimeStream(7), "7 is prime");
+        assertTrue(PrimeNumber.isPrimeStream(41), "41 is prime");
+        assertTrue(PrimeNumber.isPrimeStream(5099), "5099 is prime");
+
+        assertTrue(PrimeNumber.isPrimeBig(3), "3 is prime");
+        assertTrue(PrimeNumber.isPrimeBig(5), "5 is prime");
+        assertTrue(PrimeNumber.isPrimeBig(7), "7 is prime");
+        assertTrue(PrimeNumber.isPrimeBig(41), "41 is prime");
+        assertTrue(PrimeNumber.isPrimeBig(5099), "5099 is prime");
     }
 
     /**
      * All the numbers are not prime. Check this out
      */
     @Test
-    public void testNotPrime() {
-        assertFalse(PrimeNumber.isPrime(4), "4 is not prime");
-        assertFalse(PrimeNumber.isPrime(6), "6 is not prime");
-        assertFalse(PrimeNumber.isPrime(8), "8 is not prime");
-        assertFalse(PrimeNumber.isPrime(9), "9 is not prime");
-        assertFalse( PrimeNumber.isPrime(45),"45 is not prime");
-        assertFalse( PrimeNumber.isPrime(-5),"-5 is not prime");
-        assertFalse( PrimeNumber.isPrime(-8),"-8 is not prime");
-        assertFalse( PrimeNumber.isPrime(-41),"-41 is not prime");
+    void testNotPrime() {
+        assertFalse(PrimeNumber.isPrimeClassic(4), "4 is not prime");
+        assertFalse(PrimeNumber.isPrimeClassic(6), "6 is not prime");
+        assertFalse(PrimeNumber.isPrimeClassic(8), "8 is not prime");
+        assertFalse(PrimeNumber.isPrimeClassic(9), "9 is not prime");
+        assertFalse( PrimeNumber.isPrimeClassic(45),"45 is not prime");
+        assertFalse( PrimeNumber.isPrimeClassic(-5),"-5 is not prime");
+        assertFalse( PrimeNumber.isPrimeClassic(-8),"-8 is not prime");
+        assertFalse( PrimeNumber.isPrimeClassic(-41),"-41 is not prime");
+
+        assertFalse(PrimeNumber.isPrimeStream(4), "4 is not prime");
+        assertFalse(PrimeNumber.isPrimeStream(6), "6 is not prime");
+        assertFalse(PrimeNumber.isPrimeStream(8), "8 is not prime");
+        assertFalse(PrimeNumber.isPrimeStream(9), "9 is not prime");
+        assertFalse( PrimeNumber.isPrimeStream(45),"45 is not prime");
+        assertFalse( PrimeNumber.isPrimeStream(-5),"-5 is not prime");
+        assertFalse( PrimeNumber.isPrimeStream(-8),"-8 is not prime");
+        assertFalse( PrimeNumber.isPrimeStream(-41),"-41 is not prime");
+
+        assertFalse(PrimeNumber.isPrimeBig(4), "4 is not prime");
+        assertFalse(PrimeNumber.isPrimeBig(6), "6 is not prime");
+        assertFalse(PrimeNumber.isPrimeBig(8), "8 is not prime");
+        assertFalse(PrimeNumber.isPrimeBig(9), "9 is not prime");
+        assertFalse( PrimeNumber.isPrimeBig(45),"45 is not prime");
+        assertFalse( PrimeNumber.isPrimeBig(-5),"-5 is not prime");
+        assertFalse( PrimeNumber.isPrimeBig(-8),"-8 is not prime");
+        assertFalse( PrimeNumber.isPrimeBig(-41),"-41 is not prime");
     }
 }

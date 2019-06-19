@@ -1,5 +1,7 @@
 package com.battlecodes.kata.kyu6;
 
+import java.util.stream.IntStream;
+
 /**
  * Define a function that takes an integer argument and returns logical value true or false
  * depending on if the integer is a prime.
@@ -21,11 +23,20 @@ package com.battlecodes.kata.kyu6;
 class PrimeNumber {
 
     /**
+     * Value of certainty a measure of the uncertainty that the caller is
+     * willing to tolerate: if the call returns {@code true}
+     * the probability that this BigInteger is prime exceeds
+     * (1 - 1/2<sup>{@code certainty}</sup>).  The execution time of
+     * this method is proportional to the value of this parameter.
+     */
+    private final static int certainty = 20;
+
+    /**
      * Is the number prime or not. Classic implementation
      * @param num incoming number
      * @return true if the number is prime, else false
      */
-    static boolean isPrime(int num) {
+    static boolean isPrimeClassic(int num) {
         if (num == 2) {
             return true;
         }
@@ -34,11 +45,32 @@ class PrimeNumber {
             return false;
         }
 
-        for (int i=2; i < (Math.sqrt(num) + 1); i++) {
+        for (int i=3; i < (Math.sqrt(num) + 1); i++) {
             if (num%i == 0) {
                 return false;
             }
         }
         return true;
+    }
+
+    /**
+     * Is the number prime or not. Stream implementation
+     * @param num incoming number
+     * @return true if the number is prime, else false
+     */
+    static boolean isPrimeStream(int num) {
+        if (num == 2) return true;
+        if ((num < 2) || (num%2==0)) return false;
+
+        return !IntStream.rangeClosed(3, (int) Math.sqrt(num) + 1).filter(x -> (num%x == 0)).findAny().isPresent();
+    }
+
+    /**
+     * Is the number prime or not. BigInteger implementation
+     * @param num incoming number
+     * @return true if the number is prime, else false
+     */
+    static boolean isPrimeBig(int num) {
+        return num > 1 && java.math.BigInteger.valueOf(num).isProbablePrime(certainty);
     }
 }
