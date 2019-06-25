@@ -27,9 +27,9 @@ class DescendingOrder {
     static int sortDescArray(int num) {
         String numStr = ""+num;
 
-        String[] splited = numStr.split("");
-        Arrays.sort(splited, Comparator.reverseOrder());
-        String joined = String.join("",splited);
+        String[] split = numStr.split("");
+        Arrays.sort(split, Comparator.reverseOrder());
+        String joined = String.join("",split);
 
         return stringToNumber(joined);
     }
