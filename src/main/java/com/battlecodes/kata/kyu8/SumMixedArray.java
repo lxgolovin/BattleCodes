@@ -8,29 +8,33 @@ import java.util.List;
  *
  * Return your answer as a number.
  */
-public class SumMixedArray {
-    /*
-     * Assume input will be only of Integer o String type
+class SumMixedArray {
+
+    /**
+     * Classic version for the task
+     * @param mixed mixed list
+     * @return sum of all digits
      */
-
-    public int sumClassic(List<?> mixed) {
+    int sumClassic(List<?> mixed) {
         Integer result = 0;
-
-        for (int i=0; i < mixed.size(); i++) {
-            if (mixed.get(i) instanceof String) {
-                result += Integer.parseInt((String) mixed.get(i));
-            } else {
-                result += (Integer) mixed.get(i);
+        for (Object o : mixed) {
+            if (o instanceof String) {
+                result += Integer.parseInt(o.toString());
+            } else if (o instanceof Integer) {
+                result += (Integer) o;
             }
         }
 
         return result;
     }
 
-    public int sum(List<?> mixed) {
+    /**
+     * Stream version for the task
+     * @param mixed mixed list
+     * @return sum of all digits
+     */
+    int sumStream(List<?> mixed) {
         return mixed.stream()
-//                .mapToInt(x -> ((x instanceof String) ? Integer.parseInt((String ) x) : (Integer) x)).sum();
-                .map(x -> (((Object) x).toString()))
-                .mapToInt(x -> Integer.valueOf(x)).sum();
+                .mapToInt(x -> Integer.parseInt(x.toString())).sum();
     }
 }
