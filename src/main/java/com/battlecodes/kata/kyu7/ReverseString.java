@@ -22,7 +22,9 @@ package com.battlecodes.kata.kyu7;
  * reverse("12345") = "54321" (N = 5)
  * All tests for this Kata are randomly generated, besides checking the reverse logic they will count how many times the reverse() function has been executed.
  */
-class ReverseString {
+final class ReverseString {
+
+    private ReverseString() {}
 
     /**
      * Recursive reverse method to revert string
@@ -31,8 +33,12 @@ class ReverseString {
      */
     static String reverse(String str) {
         if (str.length() > 1 ) {
-            str = reverse(str.substring(1)).concat(str.substring(0,1));
+            str = reverse(str.substring(1)) + str.substring(0, 1);
         }
         return str;
+    }
+
+    static String reverseBuilder(String str) {
+        return new StringBuilder(str).reverse().toString();
     }
 }

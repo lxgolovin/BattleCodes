@@ -37,4 +37,11 @@ class ReverseStringTest {
         assertEquals("abcd", ReverseString.reverse("dcba"));
         assertEquals("12345", ReverseString.reverse("54321"));
     }
+
+    @Test
+    void reverseBuilder() {
+        assertEquals("dlrow olleh", ReverseString.reverseBuilder("hello world"));
+        assertEquals("abcd", ReverseString.reverseBuilder("dcba"));
+        assertEquals("12345", ReverseString.reverseBuilder("54321"));
+    }
 }
