@@ -1,5 +1,6 @@
 package com.battlecodes.kata.kyu8;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**
@@ -14,5 +15,13 @@ final class TakeNDigits {
                 .range(0, Math.min(n, array.length))
                 .map(i -> array[i])
                 .toArray();
+    }
+
+    static int[] takeNDigitsClever(int[] array, int n) {
+        return n > array.length ? array : Arrays.copyOf(array, n);
+    }
+
+    static int[] takeNDigitsSuperClever(int[] array, int n) {
+        return Arrays.stream(array).limit(n).toArray();
     }
 }
