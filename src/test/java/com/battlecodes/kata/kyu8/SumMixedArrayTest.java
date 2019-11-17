@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
  * Return your answer as a number.
  */
 class SumMixedArrayTest {
-    private final SumMixedArray SumMixedArray = new SumMixedArray();
 
     @Test
     void test_1() {

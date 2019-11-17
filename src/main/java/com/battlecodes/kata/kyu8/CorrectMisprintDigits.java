@@ -15,14 +15,11 @@ import java.util.stream.Collectors;
  * I is misinterpreted as 1
  * The test cases contain numbers only by mistake.
  */
-class CorrectMisprintDigits {
+final class CorrectMisprintDigits {
 
-    /**
-     * Corrects mistakes according to the task
-     *
-     * @param string input string to be corrected
-     * @return corrected string
-     */
+    private CorrectMisprintDigits() {
+    }
+
     static String correctClassic(String string) {
         return string
                 .replace("5", "S")

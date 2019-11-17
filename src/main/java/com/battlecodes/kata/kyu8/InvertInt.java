@@ -7,13 +7,11 @@ package com.battlecodes.kata.kyu8;
  * invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
  * invert([]) == []
  */
-class InvertInt {
+final class InvertInt {
 
-    /**
-     * Old school invert
-     * @param arr array of integers to be inverted
-     * @return inverted array
-     */
+    private InvertInt() {
+    }
+
     static int[] invert(int[] arr) {
         int[] res = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -22,11 +20,6 @@ class InvertInt {
         return res;
     }
 
-    /**
-     * Stream version of invertion
-     * @param arr array of integers to be inverted
-     * @return inverted array
-     */
     static int[] invertStream(int[] arr) {
         return java.util.Arrays.stream(arr).map(i -> -i).toArray();
     }

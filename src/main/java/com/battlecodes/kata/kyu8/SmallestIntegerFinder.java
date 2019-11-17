@@ -13,7 +13,8 @@ import java.util.stream.IntStream;
  *
  * You can assume, for the purpose of this kata, that the supplied array will not be empty.
  */
-class SmallestIntegerFinder {
+final class SmallestIntegerFinder {
+
     private SmallestIntegerFinder() {}
 
     static int findSmallestInt(int[] args) {

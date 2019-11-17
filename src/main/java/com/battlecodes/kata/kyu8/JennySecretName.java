@@ -7,13 +7,11 @@ package com.battlecodes.kata.kyu8;
  *
  * Can you help her?
  */
-class JennySecretName {
+final class JennySecretName {
 
-    /**
-     * Say hello. Easy kyu
-     * @param name Name
-     * @return Greeting
-     */
+    private JennySecretName() {
+    }
+
     static String greet(String name) {
         return name.equals("Johnny") ?  "Hello, my love!": String.format("Hello, %s!", name);
     }

@@ -8,6 +8,7 @@ import java.util.stream.IntStream;
  * and returns a list/array array of the first n elements from the list/array.
  */
 final class TakeNDigits {
+
     private TakeNDigits() {}
 
     static int[] takeNDigits(int[] array, int n) {

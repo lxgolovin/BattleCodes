@@ -7,26 +7,19 @@ import java.util.Arrays;
  *
  * For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
  */
-class SquareNSum {
+final class SquareNSum {
 
-    /**
-     * Stream implementation of the task
-     * @param arr input array to be sumed
-     * @return sum of squares
-     */
+    private SquareNSum() {
+    }
+
     static int squareSumStream(int[] arr) {
         return Arrays.stream(arr).map(x -> x*x).sum();
     }
 
-    /**
-     * Usual implementation of the task
-     * @param arr input array to be sumed
-     * @return sum of squares
-     */
     static int squareSum(int[] arr) {
         int result = 0;
         for (int i:arr) {
-            result = result + i*i;
+            result += i * i;
         }
         return result;
     }
