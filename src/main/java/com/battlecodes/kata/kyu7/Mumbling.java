@@ -13,14 +13,11 @@ import java.util.stream.IntStream;
  * accum("cwAt") -> "C-Ww-Aaa-Tttt"
  * The parameter of accum is a string which includes only letters from a..z and A..Z.
  */
-public class Mumbling {
+public final class Mumbling {
 
-    /**
-     * repeat method to repeat string several times
-     * @param count number of times to repeat
-     * @param with string to be repeated
-     * @return new string
-     */
+    private Mumbling() {
+    }
+
     private static String repeat(int count, String with) {
         StringBuilder sb = new StringBuilder(with.toUpperCase());
         for(int j=0; j<count; j++) {
@@ -29,11 +26,6 @@ public class Mumbling {
         return sb.toString();
     }
 
-    /**
-     * Accumulates string according to task
-     * @param str input string to be changed
-     * @return string after modification
-     */
     static String accum(final String str) {
         String[] result = str.split("");
 
@@ -44,7 +36,7 @@ public class Mumbling {
         return String.join("-", result);
     }
 
-    public static String accumStream(String s) {
+    static String accumStream(String s) {
         return IntStream.range(0, s.length())
                 .mapToObj(i -> IntStream.range(0, i + 1)
                         .mapToObj(i1 -> i1 == 0 ? String.valueOf(s.charAt(i)).toUpperCase() : String.valueOf(s.charAt(i)).toLowerCase())

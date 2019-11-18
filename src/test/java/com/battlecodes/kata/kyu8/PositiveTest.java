@@ -12,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class PositiveTest {
 
-    /**
-     * Generate random array and test in on both ways
-     */
     @Test
     void sumAllPositives() {
         int[] justArray = Positive.randomArray();

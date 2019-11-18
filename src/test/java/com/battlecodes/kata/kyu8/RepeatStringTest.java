@@ -12,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class RepeatStringTest {
 
-    /**
-     * Test repeating in several ways
-     */
     @Test
     void repeatStr() {
         String str1 = "II";

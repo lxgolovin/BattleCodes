@@ -11,31 +11,20 @@ import java.util.stream.Collectors;
  * pigIt('Pig latin is cool'); // igPay atinlay siay oolcay
  * pigIt('Hello world !');     // elloHay orldway !
  */
-public class SimplePigLatin {
+public final class SimplePigLatin {
 
-    /**
-     * Punctuation symbols
-     */
-    private static final String notAlpha = "[!:,./?;]";
+    private static final String NOT_ALPHA = "[!:,./?;]";
 
-    /**
-     * Main method. Stream edition
-     * @param str incoming string
-     * @return returns pig latin string with not touched punctuation symbols
-     */
+    private SimplePigLatin() {
+    }
+
     static String pigIt(String str) {
         return Arrays.stream(str.split(" "))
-                .map(s -> (s.matches(notAlpha)) ? s : (s.substring(1).concat(s.substring(0, 1)).concat("ay")))
+                .map(s -> (s.matches(NOT_ALPHA)) ? s : ((s.substring(1) + s.substring(0, 1)) + "ay"))
                 .collect(Collectors.joining(" "));
     }
 
-    /**
-     * Main method. Crazy edition! Really clever!
-     * @param str incoming string
-     * @return returns pig latin string with not touched punctuation symbols
-     */
     static String pigItCrazy(String str) {
         return str.replaceAll("(\\w)(\\w*)", "$2$1ay");
-        //return  = str.replaceAll("([a-zA-Z])([a-zA-Z]*)","$2$1ay");
     }
 }

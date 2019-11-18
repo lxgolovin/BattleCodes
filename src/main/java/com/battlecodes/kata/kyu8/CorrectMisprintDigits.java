@@ -27,12 +27,6 @@ final class CorrectMisprintDigits {
                 .replace("1", "I");
     }
 
-    /**
-     * Corrects mistakes according to the task. Stream version
-     *
-     * @param string input string to be corrected
-     * @return corrected string
-     */
     static String correctStream(String string) {
         return Arrays.stream(string.split(""))
                 .map(x -> x.equals("5") ? "S" : x.equals("1") ? "I" : x.equals("0") ? "O" : x)

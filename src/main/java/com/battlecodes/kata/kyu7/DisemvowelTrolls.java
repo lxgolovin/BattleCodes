@@ -13,30 +13,17 @@ import java.util.regex.Pattern;
  *
  * Note: for this kata y isn't considered a vowel.
  */
-class DisemvowelTrolls {
+final class DisemvowelTrolls {
 
-    /**
-     * Pre compiled pattern to match all vowels in a given string.
-     */
     private static final Pattern DISEMVOWEL_PATTERN = Pattern.compile("(?i)[aeiou]");
 
-    /**
-     * Remove all vowels from the given input string.
-     * Matcher version with compiled pattern
-     *
-     * @param str The string to remove vowels from.
-     * @return A copy of the original string with all vowels removed.
-     */
+    private DisemvowelTrolls() {
+    }
+
     public static String disemvowelMatcher(String str) {
         return DISEMVOWEL_PATTERN.matcher(str).replaceAll("");
     }
 
-    /**
-     * Remove all vowels from the given input string.
-     *
-     * @param str The string to remove vowels from.
-     * @return A copy of the original string with all vowels removed.
-     */
     static String disemvowel(String str) {
         return str.replaceAll("([AEIOUaeiou])", "");
     }

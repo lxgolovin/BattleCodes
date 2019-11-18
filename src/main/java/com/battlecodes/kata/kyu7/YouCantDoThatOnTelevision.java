@@ -17,21 +17,16 @@ package com.battlecodes.kata.kyu7;
  * bucketOf("I don't know if I'm doing this right.") -> "slime"
  * bucketOf("You won't get me!") -> "air"
  */
-class YouCantDoThatOnTelevision {
+final class YouCantDoThatOnTelevision {
 
-    /**
-     * Some static const
-     */
     private static final String SLIME = "slime";
     private static final String WATER = "water";
     private static final String AIR = "air";
     private static final String SLUDGE = "sludge";
 
-    /**
-     * My version of the slime
-     * @param said what is said
-     * @return work according to task
-     */
+    private YouCantDoThatOnTelevision() {
+    }
+
     static String bucketOf(String said) {
         String slime = ".*((slime)|(i\\sdon't\\sknow)).*";
         String water = ".*\\b((water)|(wash)|(wet)).*";
@@ -48,22 +43,12 @@ class YouCantDoThatOnTelevision {
         }
     }
 
-    /**
-     * Clever version of the slime
-     * @param said what is said
-     * @return work according to task
-     */
     static String bucketOfShort(String said) {
         boolean water = said.toLowerCase().matches(".*(water|wet|wash)+.*");
         boolean slime = said.toLowerCase().matches(".*(i don't know|slime)+.*");
         return water && slime ? SLUDGE : water ? WATER : slime ? SLIME : AIR;
     }
 
-    /**
-     * Classic version of the slime
-     * @param said what is said
-     * @return work according to task
-     */
     static String bucketOfClassic(String said) {
         String text = said.toLowerCase();
         boolean water = text.contains("wet") || text.contains("water") || text.contains("wash");
