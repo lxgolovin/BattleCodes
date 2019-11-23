@@ -15,14 +15,11 @@ import java.util.stream.Collectors;
  * I is misinterpreted as 1
  * The test cases contain numbers only by mistake.
  */
-class CorrectMisprintDigits {
+final class CorrectMisprintDigits {
 
-    /**
-     * Corrects mistakes according to the task
-     *
-     * @param string input string to be corrected
-     * @return corrected string
-     */
+    private CorrectMisprintDigits() {
+    }
+
     static String correctClassic(String string) {
         return string
                 .replace("5", "S")
@@ -30,12 +27,6 @@ class CorrectMisprintDigits {
                 .replace("1", "I");
     }
 
-    /**
-     * Corrects mistakes according to the task. Stream version
-     *
-     * @param string input string to be corrected
-     * @return corrected string
-     */
     static String correctStream(String string) {
         return Arrays.stream(string.split(""))
                 .map(x -> x.equals("5") ? "S" : x.equals("1") ? "I" : x.equals("0") ? "O" : x)

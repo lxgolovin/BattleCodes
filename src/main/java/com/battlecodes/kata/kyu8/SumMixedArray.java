@@ -8,14 +8,12 @@ import java.util.List;
  *
  * Return your answer as a number.
  */
-class SumMixedArray {
+final class SumMixedArray {
 
-    /**
-     * Classic version for the task
-     * @param mixed mixed list
-     * @return sum of all digits
-     */
-    int sumClassic(List<?> mixed) {
+    private SumMixedArray() {
+    }
+
+    static int sumClassic(List<?> mixed) {
         Integer result = 0;
         for (Object o : mixed) {
             if (o instanceof String) {
@@ -28,12 +26,7 @@ class SumMixedArray {
         return result;
     }
 
-    /**
-     * Stream version for the task
-     * @param mixed mixed list
-     * @return sum of all digits
-     */
-    int sumStream(List<?> mixed) {
+    static int sumStream(List<?> mixed) {
         return mixed.stream()
                 .mapToInt(x -> Integer.parseInt(x.toString())).sum();
     }

@@ -13,18 +13,11 @@ package com.battlecodes.kata.kyu8;
  * basicOp('*', 5, 5)         // Output: 25
  * basicOp('/', 49, 7)        // Output: 7
  */
-class BasicOperations {
+final class BasicOperations {
 
-    /**
-     * Implementation for basic operations
-     * Easy kyu
-     * @param op type of operation
-     * @param v1 first operand
-     * @param v2 second operand
-     * @return integer result
-     * @throws IllegalArgumentException for division by zero and for
-     * illegal operation
-     */
+    private BasicOperations() {
+    }
+
     static Integer basicMath(String op, int v1, int v2) {
         switch (op) {
             case "+":

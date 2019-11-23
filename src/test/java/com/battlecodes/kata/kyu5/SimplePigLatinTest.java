@@ -12,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SimplePigLatinTest {
 
-    /**
-     * Testing for piggy style latin
-     */
     @Test
     void simplePigLatin() {
         assertEquals("igPay atinlay siay oolcay", SimplePigLatin.pigIt("Pig latin is cool"));

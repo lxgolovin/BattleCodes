@@ -14,22 +14,15 @@ package com.battlecodes.kata.kyu8;
  * stringToNumber("1405") == 1405
  * stringToNumber("-7"  ) == -7
  */
-public class StringToNumber {
+public final class StringToNumber {
 
-    /**
-     * Converts string to integer by parseInt
-     * @param str string to be converted
-     * @return integer value parsed from string
-     */
+    private StringToNumber() {
+    }
+
     public static int stringToNumber(String str) {
         return Integer.parseInt(str);
     }
 
-    /**
-     * Converts string to integer by valueOf
-     * @param str string to be converted
-     * @return integer value parsed from string
-     */
     public static int stringToNumberOther(String str) {
         return Integer.valueOf(str);
     }

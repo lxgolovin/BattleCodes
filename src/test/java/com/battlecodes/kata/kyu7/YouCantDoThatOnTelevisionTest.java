@@ -22,9 +22,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class YouCantDoThatOnTelevisionTest {
 
-    /**
-     * Testing of water condition
-     */
     @Test
     void waterTest() {
         assertEquals("water", YouCantDoThatOnTelevision.bucketOf("water"));
@@ -40,9 +37,6 @@ class YouCantDoThatOnTelevisionTest {
         assertEquals("water", YouCantDoThatOnTelevision.bucketOfClassic("I got washed"));
     }
 
-    /**
-     * Testing for slime
-     */
     @Test
     void slimeTest() {
         assertEquals("slime", YouCantDoThatOnTelevision.bucketOf("slime"));
@@ -58,9 +52,6 @@ class YouCantDoThatOnTelevisionTest {
         assertEquals("slime", YouCantDoThatOnTelevision.bucketOfClassic("If I don't know me"));
     }
 
-    /**
-     * Testing sludge
-     */
     @Test
     void sludgeTest() {
         assertEquals("sludge", YouCantDoThatOnTelevision.bucketOf("Will I get wet? I don't know."));
@@ -68,9 +59,6 @@ class YouCantDoThatOnTelevisionTest {
         assertEquals("sludge", YouCantDoThatOnTelevision.bucketOfClassic("Will I get wet? I don't know."));
     }
 
-    /**
-     * Testing the rest
-     */
     @Test
     void airTest() {
         assertEquals("air", YouCantDoThatOnTelevision.bucketOf("This should be safe."));

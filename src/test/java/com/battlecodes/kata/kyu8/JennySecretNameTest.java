@@ -13,9 +13,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class JennySecretNameTest {
 
-    /**
-     * Say hello
-     */
     @Test
     void greet() {
         assertEquals("Hello, my love!", JennySecretName.greet("Johnny"));

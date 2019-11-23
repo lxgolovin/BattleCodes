@@ -20,13 +20,11 @@ import java.util.Objects;
  *
  * Hint: Don't forget to check for bad values like null/undefined
  */
-class CountSheep {
+final class CountSheep {
 
-    /**
-     * Classic implementation
-     * @param sheep array of sheep
-     * @return counted sheep
-     */
+    private CountSheep() {
+    }
+
     static int countSheep(Boolean[] sheep) {
         int count = 0;
         for (Boolean s: sheep) {
@@ -41,22 +39,12 @@ class CountSheep {
     }
 
 
-    /**
-     * Stream implementation of {@link CountSheep#countSheep(Boolean[])}
-     * @param sheep array of sheep
-     * @return counted sheep
-     */
     static int countSheepStream(Boolean[] sheep) {
         return (int) Arrays.stream(sheep)
                 .filter(Objects::nonNull)
                 .filter(Boolean::booleanValue).count();
     }
 
-    /**
-     * Stream implementation of {@link CountSheep#countSheep(Boolean[])}
-     * @param sheep array of sheep
-     * @return counted sheep
-     */
     static int countSheepStreamVer2(Boolean[] sheep) {
         return (int) Arrays.stream(sheep).filter(Boolean.TRUE::equals).count();
     }

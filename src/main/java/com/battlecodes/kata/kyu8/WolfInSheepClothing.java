@@ -28,7 +28,7 @@ import java.util.Collections;
  * warnTheSheep(["sheep", "sheep", "wolf"]) === "Pls go away and stop eating my sheep"
  */
 
-public final class WolfInSheepClothing {
+final class WolfInSheepClothing {
 
     private WolfInSheepClothing() {
     }
