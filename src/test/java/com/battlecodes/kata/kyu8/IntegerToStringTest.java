@@ -4,16 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Tests for {@link IntegerToString}
- */
 class IntegerToStringTest {
 
-    /**
-     * Try all ways
-     * Kata.numberToString(123); // returns "123";
-     * Kata.numberToString(999); // returns "999";
-     */
     @Test
     void integerToString() {
         assertEquals("123", IntegerToString.integerToString(123));

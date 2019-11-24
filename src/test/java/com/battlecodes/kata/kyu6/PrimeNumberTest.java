@@ -24,9 +24,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class PrimeNumberTest {
 
-    /**
-     * Tests basics for the prime number
-     */
     @Test
     void testBasic() {
         assertFalse(PrimeNumber.isPrimeClassic(0), "0  is not prime");
@@ -51,9 +48,6 @@ class PrimeNumberTest {
         assertFalse(PrimeNumber.isPrimeBig(-1), "-1 is not prime");
     }
 
-    /**
-     * All the numbers are prime. Check this out
-     */
     @Test
     void testPrime() {
         assertTrue(PrimeNumber.isPrimeClassic(3), "3 is prime");
@@ -75,9 +69,6 @@ class PrimeNumberTest {
         assertTrue(PrimeNumber.isPrimeBig(5099), "5099 is prime");
     }
 
-    /**
-     * All the numbers are not prime. Check this out
-     */
     @Test
     void testNotPrime() {
         assertFalse(PrimeNumber.isPrimeClassic(4), "4 is not prime");

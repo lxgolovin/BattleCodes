@@ -8,9 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class CountSheepTest {
 
-    /**
-     * Count sheep in 3 ways
-     */
     @Test
     void countSheepSuperPuper() {
         Boolean[] sheep = {true, true, true, false,

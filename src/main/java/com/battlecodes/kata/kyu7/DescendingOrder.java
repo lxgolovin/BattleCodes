@@ -17,13 +17,11 @@ import static java.util.stream.Collectors.joining;
  * Input: 145263 Output: 654321
  * Input: 1254859723 Output: 9875543221
  */
-class DescendingOrder {
+final class DescendingOrder {
 
-    /**
-     * Array based implementation
-     * @param num integer number to be converted
-     * @return rearranged num with its digits in descending order (the highest possible number)
-     */
+    private DescendingOrder() {
+    }
+
     static int sortDescArray(int num) {
         String numStr = ""+num;
 
@@ -34,11 +32,6 @@ class DescendingOrder {
         return stringToNumber(joined);
     }
 
-    /**
-     * Stream based implementation
-     * @param num integer number to be converted
-     * @return rearranged num with its digits in descending order (the highest possible number)
-     */
     static int sortDescStream(int num) {
         String numStr = ""+num;
 

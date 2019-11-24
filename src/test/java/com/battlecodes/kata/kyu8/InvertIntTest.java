@@ -12,9 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class InvertIntTest {
 
-     /**
-      * Check inverting in several ways
-      */
     @Test
     void invertInt() {
             int[] ar = {1,2,3,4,5,6};

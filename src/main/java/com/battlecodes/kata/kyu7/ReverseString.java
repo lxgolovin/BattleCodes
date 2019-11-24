@@ -26,11 +26,6 @@ final class ReverseString {
 
     private ReverseString() {}
 
-    /**
-     * Recursive reverse method to revert string
-     * @param str to be reverted
-     * @return string reverted
-     */
     static String reverse(String str) {
         if (str.length() > 1 ) {
             str = reverse(str.substring(1)) + str.substring(0, 1);

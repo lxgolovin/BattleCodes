@@ -10,9 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class SquareNSumTest {
 
-    /**
-     * Testing squareSum both implementations
-     */
     @Test
     void squareAndSum() {
         assertEquals(9, SquareNSum.squareSum(new int[]{1, 2, 2}));

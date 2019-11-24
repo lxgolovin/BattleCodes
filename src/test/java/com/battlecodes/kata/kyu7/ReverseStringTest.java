@@ -28,9 +28,6 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class ReverseStringTest {
 
-    /**
-     * Tests to check if it works
-     */
     @Test
     void reverse() {
         assertEquals("dlrow olleh", ReverseString.reverse("hello world"));
