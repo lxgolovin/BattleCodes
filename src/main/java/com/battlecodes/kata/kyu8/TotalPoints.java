@@ -32,4 +32,11 @@ public final class TotalPoints {
             return (diff > 0) ? 3 : (diff == 0) ? 1 : 0;
         }).sum();
     }
+
+    public static int pointsChar(String[] games) {
+        return Arrays.stream(games)
+                .mapToInt(score -> score.charAt(0) - score.charAt(2))
+                .map(match -> match > 0 ? 3 : match == 0 ? 1 : 0)
+                .sum();
+    }
 }
